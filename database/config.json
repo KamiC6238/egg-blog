@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "fuermosi159",
+    "database": "egg-blog",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "root",
+    "password": "fuermosi159",
+    "database": "egg-blog",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": "fuermosi159",
+    "database": "egg-blog",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
