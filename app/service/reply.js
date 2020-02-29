@@ -9,8 +9,7 @@ class ReplysService extends Service {
     let reply_arr = id.split('-')
     let reply_id = reply_arr.join('')
     reply.reply_id = reply_id
-    console.log(reply, 'replyPoint')
-    try {
+    // try {
       if(reply.type === 'is_point_reply') {
         await ctx.service.reply.notify_point_reply()
       }
@@ -35,13 +34,13 @@ class ReplysService extends Service {
         message: '评论成功',
         point_id: reply.point_id
       }
-    } catch (err) {
-      return {
-        status: false,
-        code: 1,
-        message: '评论失败'
-      }
-    }
+    // } catch (err) {
+    //   return {
+    //     status: false,
+    //     code: 1,
+    //     message: '评论失败'
+    //   }
+    // }
   }
 
   async replyArticle() {
@@ -93,8 +92,10 @@ class ReplysService extends Service {
       raw: true,
       where : { point_id: body.point_id }
     })
-    console.log(body, 'notify_point_reply')
+    console.log(body, 'notify_point_reply,--------------------------')
+    console.log(body.uid, 'body.uid')
     let pointAuthorUid = pointAuthor[0].uid
+        console.log(pointAuthorUid, 'pointAuthorUid')
     if(body.uid !== pointAuthorUid) {
       await ctx.model.models.notifications.create({
         uid: pointAuthorUid,

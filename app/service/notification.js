@@ -37,25 +37,9 @@ class NotificationService extends Service {
             raw: true,
             where: { uid: results[i].other_uid }
           })
-          userInfo[0].create_time = results[i].create_time
-          userInfo[0].avatar = await ctx.service.formatAvatar.index(userInfo[0].avatar)
-          userInfo[0].article_id = results[i].article_id
-          userInfo[0].article_title = results[i].article_title
-          userInfo[0].isRead = results[i].is_read
-          userInfo[0].isPublish = results[i].is_publish
-          userInfo[0].isPointReply = results[i].is_point_reply
-          userInfo[0].isPointLike = results[i].is_point_like
-          userInfo[0].isPointChildReply = results[i].is_point_child_reply
-          userInfo[0].isArticleChildReply = results[i].is_article_child_reply
-          userInfo[0].isArticleReply = results[i].is_article_reply
-          userInfo[0].isArticleLike = results[i].is_article_like
-          userInfo[0].isFocus = results[i].is_focus
-          userInfo[0].point_id = results[i].point_id
-          userInfo[0].point_content = results[i].point_reply_content
-          userInfo[0].article_content = results[i].article_reply_content
-          userInfo[0].article_be_reply_content = results[i].article_be_reply_content
-          userInfo[0].point_be_reply_content = results[i].point_be_reply_content
-          notifications.push(userInfo[0])
+          let notification = Object.assign(results[i], userInfo[0])
+          notification.avatar = await ctx.service.formatAvatar.index(notification.avatar)
+          notifications.push(notification)
         }
       }
     } catch (err) {

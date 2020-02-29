@@ -13,7 +13,7 @@ class ReplysChildService extends Service {
     let replys = []
     let result = {}
     reply.reply_child_id = reply_child_id
-    // try {
+    try {
       await ctx.model.models.replys_children.create(reply)
       replys = await ctx.model.models.replys.findAll({                // 先找reply_id
         raw: true,
@@ -33,31 +33,26 @@ class ReplysChildService extends Service {
         result = await ctx.service.replyChild.replyPoint(replys)
       }
       return result
-    // } catch (err) {
-    //   return {
-    //     status: false,
-    //     code: 1,
-    //     message: err,
-    //     position: 'service'
-    //   }
-    // }
+    } catch (err) {
+      return {
+        status: false,
+        code: 1,
+        message: err,
+        position: 'service'
+      }
+    }
   }
 
   async notify_article_reply_child() {
     const { ctx } = this
     let body = ctx.request.body
-    console.log(body, 'notify_article_reply_child')
-    let replyUser = await ctx.model.models.replys.findAll({
-      raw: true,
-      where: { reply_id: body.reply_id }
-    })
-    if(replyUser[0].uid !== body.uid) {
+    if(body.uid !== body.replyUserUid) {
       await ctx.model.models.notifications.create({
-        uid: replyUser[0].uid,
+        uid: body.replyUserUid,
         other_uid: body.uid,
         article_id: body.article_id,
         article_reply_content: body.content,
-        article_be_reply_content: replyUser[0].content,
+        article_be_reply_content: body.replyUserContent,
         is_article_child_reply: true,
         create_time: body.create_time
       })
@@ -67,18 +62,14 @@ class ReplysChildService extends Service {
   async notify_point_reply_child() {
     const { ctx } = this
     let body = ctx.request.body
-    let replyUser = await ctx.model.models.replys.findAll({
-      raw: true,
-      where: { reply_id: body.reply_id }
-    })
     // 相等的时候相当于自己回复自己, 此时不用做通知提醒
-    if(replyUser[0].uid !== body.uid) {
+    if(body.uid !== body.replyUserUid) {
       await ctx.model.models.notifications.create({
-        uid: replyUser[0].uid,
-        other_uid: body.uid,
-        point_id: replyUser[0].point_id,
-        point_reply_content: body.content,
-        point_be_reply_content: replyUser[0].content,
+        uid: body.replyUserUid,                               // 被通知的用户
+        other_uid: body.uid,                                  // 导致用户被通知的用户
+        point_id: body.point_id,
+        point_reply_content: body.content,                    // 评论的content
+        point_be_reply_content: body.replyUserContent,        // 被评论的content
         is_point_child_reply: true,
         create_time: body.create_time
       })

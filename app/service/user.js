@@ -4,6 +4,7 @@ const uuid = require('node-uuid');
 class UserService extends Service {
   async login() {
     const { ctx, app } = this
+    console.log('loginlogin')
     const { username, password } = ctx.request.body
     const user = await ctx.model.User.findOne({
       where: {

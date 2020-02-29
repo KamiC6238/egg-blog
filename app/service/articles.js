@@ -3,7 +3,7 @@ const Service = require('egg').Service;
 class ArticleService extends Service {
   async index() {
     const { ctx, app } = this
-    let { uid, other_uid } = ctx.request.query
+    let { uid, other_uid, is_log } = ctx.request.query
     try {
       let articles = await ctx.model.Articles.findAll({
         raw: true,
@@ -13,7 +13,7 @@ class ArticleService extends Service {
         where: uid ? { uid } : {}
       })
       // 给每个文章加上isLike字段表明用户是否已经点赞过该文赞了
-      uid && (uid === other_uid)
+      is_log && uid && (uid === other_uid)
       ? await ctx.service.articles.addIsLike(uid, articles)
       : await ctx.service.articles.addIsLike(other_uid, articles)
       return {

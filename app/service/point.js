@@ -66,10 +66,10 @@ class PointsService extends Service {
 
   async getAllPoints() {
     const { ctx, config, app } = this
-    const { uid, other_uid, type } = ctx.request.query    // 这里的uid是用来获取登录用户点赞了哪些沸点用的
+    const { uid, other_uid, type, isLog } = ctx.request.query    // 这里的uid是用来获取登录用户点赞了哪些沸点用的
     let avatar = ''
     try {
-      let res = await ctx.service.point.allPoints(uid, type)
+      let res = await ctx.service.point.allPoints(uid, type, isLog)
       uid === other_uid
       ? await ctx.service.point.formatPoints(uid, res)
       : await ctx.service.point.formatPoints(other_uid, res)
@@ -87,7 +87,7 @@ class PointsService extends Service {
     }
   }
 
-  async formatPoints(uid, res) {
+  async formatPoints(uid, res, isLog) {
     const { ctx } = this
     for(let index = 0; index < res.length; index++) {
       res[index].avatar = await ctx.service.point.getAvatar(res[index].uid)
@@ -105,8 +105,8 @@ class PointsService extends Service {
       }
       res[index].isShowComments = false      // 给前端用于展示关闭评论区
       res[index].comments = []               // 给一个默认的评论列表为空
-      res[index].isLike = await ctx.service.point.isLikePoint(uid, res[index].point_id)     // 判断该沸点是否点赞过
-      res[index].isFocus = await ctx.service.focus.isFocuserExist(uid, res[index].uid)     // 判断该用户是否关注了发布沸点的这个用户
+      res[index].isLike = isLog ? await ctx.service.point.isLikePoint(uid, res[index].point_id) : false    // 判断该沸点是否点赞过
+      res[index].isFocus = isLog ? await ctx.service.focus.isFocuserExist(uid, res[index].uid) : false     // 判断该用户是否关注了发布沸点的这个用户
     }
   }
 
@@ -121,14 +121,14 @@ class PointsService extends Service {
     return res.length ? true : false
   }
 
-  async allPoints(uid, type) {
+  async allPoints(uid, type, isLog) {
     const { ctx } = this
     return await ctx.model.models.points.findAll({
       raw: true,
       order: [
         ['create_time', 'DESC']
       ],
-      where: uid && (type === 'all') ? {} : { uid }
+      where: (uid && (type === 'all')) || ((isLog === 'false') && (type === 'all')) ? {} : { uid }
     })
   }
 
