@@ -291,9 +291,7 @@ class PointsService extends Service {
       await ctx.model.models.points.update({
         avatar: config.processEnv + '/public/img/' + filename
       }, {
-        where: {
-          uid
-        }
+        where: { uid }
       })
     } catch (err) {
       console.log('point updateAvatar', err)

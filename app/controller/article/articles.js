@@ -74,6 +74,11 @@ class ArticleController extends Controller {
       }
     })
   }
+
+  async search() {
+    const { ctx } = this
+    ctx.body = await ctx.service.articles.search()
+  }
 }
 
 module.exports = ArticleController;

@@ -28,6 +28,9 @@ module.exports = app => {
     is_read: {                  // 被通知的用户是否已经阅读了该通知
       type: BOOLEAN
     },
+    is_tags: {                   // 是否属于关注标签的类型
+      type: BOOLEAN
+    },
     is_publish: {                // 发布文章
       type: BOOLEAN            
     },

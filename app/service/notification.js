@@ -60,10 +60,14 @@ class NotificationService extends Service {
       await ctx.model.models.notifications.update({
         is_read: true
       }, {
-        where: {
+        where: body.is_tags ? {
+          uid: body.uid,
+          article_id: body.article_id, 
+          is_tags: body.is_tags
+        } : {
           uid: body.uid,
           other_uid: body.other_uid,
-          article_id: body.article_id
+          article_id: body.article_id,
         }
       })
       return {

@@ -9588,3 +9588,329 @@ name: "unhandledExceptionError"
 pid: 2476
 hostname: DESKTOP-EA4TO87
 
+2020-02-29 19:46:07,950 ERROR 15164 nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\robn8r840p1582976767938.jpg' (uncaughtException throw 1 times on pid:15164)
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\robn8r840p1582976767938.jpg' (uncaughtException throw 1 times on pid:15164)
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\robn8r840p1582976767938.jpg"
+name: "ENOENTError"
+pid: 15164
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 19:46:07,969 ERROR 15164 nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\robn8r840p1582976767938.jpg' (uncaughtException throw 2 times on pid:15164)
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\robn8r840p1582976767938.jpg' (uncaughtException throw 2 times on pid:15164)
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\robn8r840p1582976767938.jpg"
+name: "ENOENTError"
+pid: 15164
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 19:46:07,987 ERROR 15164 [-/127.0.0.1/-/64ms POST /apis/uploadAvatar] nodejs.ERR_STREAM_DESTROYEDError: Cannot call write after a stream was destroyed
+    at doWrite (_stream_writable.js:437:19)
+    at writeOrBuffer (_stream_writable.js:425:5)
+    at WriteStream.Writable.write (_stream_writable.js:316:11)
+    at FileStream.ondata (_stream_readable.js:714:22)
+    at FileStream.emit (events.js:311:20)
+    at FileStream.Readable.read (_stream_readable.js:512:10)
+    at flow (_stream_readable.js:989:34)
+    at resume_ (_stream_readable.js:970:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+code: "ERR_STREAM_DESTROYED"
+name: "ERR_STREAM_DESTROYEDError"
+pid: 15164
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 19:51:22,588 ERROR 12328 [-/127.0.0.1/-/17ms POST /apis/user/publish/pin] nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\wgvsgmxatc1582977082585.jpg'
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\wgvsgmxatc1582977082585.jpg'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\wgvsgmxatc1582977082585.jpg"
+name: "ENOENTError"
+pid: 12328
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 19:51:42,147 ERROR 12328 [-/127.0.0.1/-/9ms POST /apis/uploadAvatar] nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\yd9ge03aqth1582977102144.jpg'
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\yd9ge03aqth1582977102144.jpg'
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\yd9ge03aqth1582977102144.jpg"
+name: "ENOENTError"
+pid: 12328
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 20:01:37,531 ERROR 12328 nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\n0kvkkqxk3p1582977697526.jpg' (uncaughtException throw 1 times on pid:12328)
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\n0kvkkqxk3p1582977697526.jpg' (uncaughtException throw 1 times on pid:12328)
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\n0kvkkqxk3p1582977697526.jpg"
+name: "ENOENTError"
+pid: 12328
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 20:04:09,325 ERROR 7996 [-/127.0.0.1/-/6ms POST /apis/auth/login] nodejs.TypeError: Cannot read property 'data' of undefined
+    at LoginController.index (D:\code\backend\egg-blog\app\controller\auth\login.js:9:12)
+    at async D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code\backend\egg-blog\node_modules\_koa-session@5.13.1@koa-session\index.js:41:7)
+    at async bodyParser (D:\code\backend\egg-blog\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async D:\code\backend\egg-blog\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\meta.js:12:5)
+    at async cors (D:\code\backend\egg-blog\node_modules\_@koa_cors@3.0.0@@koa\cors\index.js:60:27)
+
+pid: 7996
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 20:06:42,594 ERROR 7996 nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\ngyyk9fxl81582978002591.jpg' (uncaughtException throw 1 times on pid:7996)
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\ngyyk9fxl81582978002591.jpg' (uncaughtException throw 1 times on pid:7996)
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\ngyyk9fxl81582978002591.jpg"
+name: "ENOENTError"
+pid: 7996
+hostname: LAPTOP-GNGJVJN3
+
+2020-02-29 20:14:00,685 ERROR 19752 nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\8f7xc397w421582978440679.jpg' (uncaughtException throw 1 times on pid:19752)
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\8f7xc397w421582978440679.jpg' (uncaughtException throw 1 times on pid:19752)
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\8f7xc397w421582978440679.jpg"
+name: "ENOENTError"
+pid: 19752
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 10:41:02,064 ERROR 18564 [-/127.0.0.1/-/54ms POST /apis/uploadAvatar] nodejs.TypeError: ctx.service.formatAvatar is not a function
+    at ReplysService.updateAvatar (D:\code\backend\egg-blog\app\service\reply.js:157:33)
+    at UploadController.uploadAvatar (D:\code\backend\egg-blog\app\controller\auth\upload.js:27:31)
+    at async D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code\backend\egg-blog\node_modules\_koa-session@5.13.1@koa-session\index.js:41:7)
+    at async bodyParser (D:\code\backend\egg-blog\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async D:\code\backend\egg-blog\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\meta.js:12:5)
+    at async cors (D:\code\backend\egg-blog\node_modules\_@koa_cors@3.0.0@@koa\cors\index.js:60:27)
+
+pid: 18564
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 12:52:34,802 ERROR 11956 [-/127.0.0.1/-/6ms GET /apis/article/search?value=%E5%89%8D%E7%AB%AF] nodejs.TypeError: Cannot read property 'articles' of undefined
+    at ArticleController.search (D:\code\backend\egg-blog\app\controller\article\articles.js:80:34)
+    at Object.callFn (D:\code\backend\egg-blog\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (D:\code\backend\egg-blog\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at passportSession (D:\code\backend\egg-blog\node_modules\_egg-passport@2.1.1@egg-passport\lib\framework.js:59:12)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at passportInitialize (D:\code\backend\egg-blog\node_modules\_egg-passport@2.1.1@egg-passport\lib\framework.js:36:12)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at i18n (D:\code\backend\egg-blog\node_modules\_egg-i18n@2.1.1@egg-i18n\app\middleware\i18n.js:13:12)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at dta (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\dta.js:12:12)
+
+pid: 11956
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 12:53:15,485 ERROR 11956 [-/127.0.0.1/-/1ms GET /apis/article/search?value=%E5%89%8D%E7%AB%AF] nodejs.TypeError: Cannot read property 'articles' of undefined
+    at ArticleController.search (D:\code\backend\egg-blog\app\controller\article\articles.js:80:34)
+    at Object.callFn (D:\code\backend\egg-blog\node_modules\_egg-core@4.17.4@egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (D:\code\backend\egg-blog\node_modules\_egg-core@4.17.4@egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:190:18
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at D:\code\backend\egg-blog\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (D:\code\backend\egg-blog\node_modules\_@eggjs_router@2.0.0@@eggjs\router\lib\router.js:195:33)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at passportSession (D:\code\backend\egg-blog\node_modules\_egg-passport@2.1.1@egg-passport\lib\framework.js:59:12)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at passportInitialize (D:\code\backend\egg-blog\node_modules\_egg-passport@2.1.1@egg-passport\lib\framework.js:36:12)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:56
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at i18n (D:\code\backend\egg-blog\node_modules\_egg-i18n@2.1.1@egg-i18n\app\middleware\i18n.js:13:12)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at dispatch (D:\code\backend\egg-blog\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at dta (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\dta.js:12:12)
+
+pid: 11956
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 17:28:03,520 ERROR 1916 nodejs.ClusterClientNoResponseError: client no response in 10322946ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (D:\code\backend\egg-blog\node_modules\_cluster-client@3.0.1@cluster-client\lib\leader.js:77:23)
+    at listOnTimeout (internal/timers.js:549:17)
+    at processTimers (internal/timers.js:492:7)
+name: "ClusterClientNoResponseError"
+pid: 1916
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 18:18:32,655 ERROR 19080 [-/127.0.0.1/-/6ms POST /apis/auth/login] nodejs.TypeError: Cannot read property 'data' of undefined
+    at LoginController.index (D:\code\backend\egg-blog\app\controller\auth\login.js:9:12)
+    at async D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code\backend\egg-blog\node_modules\_koa-session@5.13.1@koa-session\index.js:41:7)
+    at async bodyParser (D:\code\backend\egg-blog\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async D:\code\backend\egg-blog\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\meta.js:12:5)
+    at async cors (D:\code\backend\egg-blog\node_modules\_@koa_cors@3.0.0@@koa\cors\index.js:60:27)
+
+pid: 19080
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 18:18:34,396 ERROR 19080 [-/127.0.0.1/-/8ms POST /apis/auth/login] nodejs.TypeError: Cannot read property 'data' of undefined
+    at LoginController.index (D:\code\backend\egg-blog\app\controller\auth\login.js:9:12)
+    at async D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code\backend\egg-blog\node_modules\_koa-session@5.13.1@koa-session\index.js:41:7)
+    at async bodyParser (D:\code\backend\egg-blog\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async D:\code\backend\egg-blog\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\meta.js:12:5)
+    at async cors (D:\code\backend\egg-blog\node_modules\_@koa_cors@3.0.0@@koa\cors\index.js:60:27)
+
+pid: 19080
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 18:19:00,223 ERROR 14116 [-/127.0.0.1/-/25ms POST /apis/auth/login] nodejs.TypeError: Cannot read property 'data' of undefined
+    at LoginController.index (D:\code\backend\egg-blog\app\controller\auth\login.js:9:12)
+    at async D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code\backend\egg-blog\node_modules\_koa-session@5.13.1@koa-session\index.js:41:7)
+    at async bodyParser (D:\code\backend\egg-blog\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async D:\code\backend\egg-blog\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\meta.js:12:5)
+    at async cors (D:\code\backend\egg-blog\node_modules\_@koa_cors@3.0.0@@koa\cors\index.js:60:27)
+
+pid: 14116
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 20:03:48,121 ERROR 20728 [-/127.0.0.1/-/9ms POST /apis/upload] nodejs.Error: WHERE parameter "article_id" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2184:13)
+    at D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2173:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2171:35)
+    at MySQLQueryGenerator.whereQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2144:24)
+    at MySQLQueryGenerator.updateQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:435:116)
+    at QueryInterface.bulkUpdate (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\query-interface.js:1038:37)
+    at D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\model.js:3222:34
+    at tryCatcher (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise.then (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
+    at Function.update (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\model.js:3203:8)
+    at UploadController.upload (D:\code\backend\egg-blog\app\controller\auth\upload.js:49:39)
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code\backend\egg-blog\node_modules\_koa-session@5.13.1@koa-session\index.js:41:7)
+    at async bodyParser (D:\code\backend\egg-blog\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async D:\code\backend\egg-blog\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\meta.js:12:5)
+    at async cors (D:\code\backend\egg-blog\node_modules\_@koa_cors@3.0.0@@koa\cors\index.js:60:27)
+
+pid: 20728
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 20:03:48,134 ERROR 20728 nodejs.ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\bsj1sj6adzu1583064228114.png' (uncaughtException throw 1 times on pid:20728)
+ENOENTError: ENOENT: no such file or directory, open 'D:\code\backend\egg-blog\app\public\img\bsj1sj6adzu1583064228114.png' (uncaughtException throw 1 times on pid:20728)
+errno: -4058
+code: "ENOENT"
+syscall: "open"
+path: "D:\\code\\backend\\egg-blog\\app\\public\\img\\bsj1sj6adzu1583064228114.png"
+name: "ENOENTError"
+pid: 20728
+hostname: LAPTOP-GNGJVJN3
+
+2020-03-01 20:05:14,734 ERROR 6568 [-/127.0.0.1/-/20ms POST /apis/upload] nodejs.Error: WHERE parameter "article_id" has invalid "undefined" value
+    at MySQLQueryGenerator.whereItemQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2184:13)
+    at D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2173:25
+    at Array.forEach (<anonymous>)
+    at MySQLQueryGenerator.whereItemsQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2171:35)
+    at MySQLQueryGenerator.whereQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:2144:24)
+    at MySQLQueryGenerator.updateQuery (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\dialects\abstract\query-generator.js:435:116)
+    at QueryInterface.bulkUpdate (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\query-interface.js:1038:37)
+    at D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\model.js:3222:34
+    at tryCatcher (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\util.js:16:23)
+    at Promise._settlePromiseFromHandler (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:547:31)
+    at Promise._settlePromise (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:604:18)
+    at Promise._settlePromise0 (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:649:10)
+    at Promise._settlePromises (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:729:18)
+    at _drainQueueStep (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:93:12)
+    at _drainQueue (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:86:9)
+    at Async._drainQueues (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:102:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\async.js:15:14)
+    at processImmediate (internal/timers.js:456:21)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\debuggability.js:482:19)
+    at Promise._then (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:261:17)
+    at Promise.then (D:\code\backend\egg-blog\node_modules\_bluebird@3.7.2@bluebird\js\release\promise.js:154:17)
+    at Function.update (D:\code\backend\egg-blog\node_modules\_sequelize@5.21.5@sequelize\lib\model.js:3203:8)
+    at UploadController.upload (D:\code\backend\egg-blog\app\controller\auth\upload.js:49:39)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async D:\code\backend\egg-blog\node_modules\_egg-development@2.4.3@egg-development\app\middleware\egg_loader_trace.js:9:50
+    at async xframe (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xframe.js:7:5)
+    at async xssProtection (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\xssProtection.js:7:5)
+    at async nosniff (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\nosniff.js:8:5)
+    at async noopen (D:\code\backend\egg-blog\node_modules\_egg-security@2.7.1@egg-security\lib\middlewares\noopen.js:8:5)
+    at async session (D:\code\backend\egg-blog\node_modules\_koa-session@5.13.1@koa-session\index.js:41:7)
+    at async bodyParser (D:\code\backend\egg-blog\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:5)
+    at async D:\code\backend\egg-blog\node_modules\_koa-static-cache@5.1.2@koa-static-cache\index.js:51:63
+    at async notfound (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\notfound.js:5:5)
+    at async meta (D:\code\backend\egg-blog\node_modules\_egg@2.26.0@egg\app\middleware\meta.js:12:5)
+    at async cors (D:\code\backend\egg-blog\node_modules\_@koa_cors@3.0.0@@koa\cors\index.js:60:27)
+
+pid: 6568
+hostname: LAPTOP-GNGJVJN3
+

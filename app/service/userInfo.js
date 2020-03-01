@@ -61,7 +61,7 @@ class PersonalService extends Service {
   async editUserInfo() {
     const { ctx } = this
     const { uid, username, post, company, intro, personal_page } = ctx.request.body
-    let res = await ctx.model.UserInfo.update({
+    await ctx.model.UserInfo.update({
       username,
       post,
       company,
@@ -70,7 +70,7 @@ class PersonalService extends Service {
     }, {
       where: { uid }
     })
-    console.log(res[0], 'editUserInfo')
+    await ctx.service.updateAllTableUserInfo.index()
     ctx.body = {
       status: true,
       code: 0,
@@ -79,14 +79,12 @@ class PersonalService extends Service {
   }
 
   async updateAvatar(uid, filename) {
-    const { ctx, config } = this
+    const { ctx } = this
     try {
       await ctx.model.Articles.update({
         avatar: filename
       }, {
-        where: {
-          uid
-        }
+        where: { uid }
       })
     } catch (err) {
       console.log('userInfo updateAvatar', err)

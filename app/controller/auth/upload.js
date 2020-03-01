@@ -3,7 +3,6 @@ const fs = require('mz/fs');
 const path = require('path')
 const sendToWormhole = require('stream-wormhole');
 const awaitWriteStream = require('await-stream-ready').write
-const awaitReadStream = require('await-stream-ready').read
 
 /**
  *  @config.processEnv 默认的运行环境, 比如localhost:7001
@@ -17,14 +16,15 @@ class UploadController extends Controller {
     const filename = Math.random().toString(36).substr(2) + new Date().getTime() + path.extname(stream.filename).toLocaleLowerCase();
     const target = path.join(config.baseDir, 'app/public/img', filename);
     const writeStream = fs.createWriteStream(target)
-    const readStream = fs.createReadStream(target)
     const { uid } = stream.fields
     try {
-      await ctx.service.userInfo.upload(filename, uid)
       await awaitWriteStream(stream.pipe(writeStream))
+      await ctx.service.userInfo.upload(filename, uid)
       await ctx.service.userInfo.updateAvatar(stream.fields.uid, filename)
       await ctx.service.point.updateAvatar(stream.fields.uid, filename)
       await ctx.service.articles.updateAvatar(stream.fields.uid, filename)
+      await ctx.service.reply.updateAvatar(stream.fields.uid, filename)
+      await ctx.service.replyChild.updateAvatar(stream.fields.uid, filename)
     } catch(err) {
       await sendToWormhole(stream);
       throw err;
@@ -42,14 +42,16 @@ class UploadController extends Controller {
     const filename = Math.random().toString(36).substr(2) + new Date().getTime() + path.extname(stream.filename).toLocaleLowerCase();
     const target = path.join(config.baseDir, 'app/public/img', filename);
     const writeStream = fs.createWriteStream(target)
-    const readStream = fs.createReadStream(target)
     const { article_id } = stream.fields
     try {
-      await ctx.model.models.articles.update({
-        cover_image: config.processEnv + '/public/img/' + filename
-      }, {
-        where: { article_id }
-      })
+      // 写文章的时候上传图片是没有article_id的，只有上传封面的时候才会有
+      if(article_id) {
+        await ctx.model.models.articles.update({
+          cover_image: config.processEnv + '/public/img/' + filename
+        }, {
+          where: { article_id }
+        })
+      }
       await awaitWriteStream(stream.pipe(writeStream))
     } catch(err) {
       await sendToWormhole(stream);

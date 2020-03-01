@@ -4,6 +4,7 @@ module.exports = app => {
   router.get('/apis/getArticles', controller.article.articles.getArticles)            // 获取文章列表
   router.get('/apis/getSingleArticle', controller.article.articles.getSingleArticle)  // 获取单独的文章
   router.get('/apis/deleteArticle', controller.article.articles.deleteArticle)           // 删除文章
+  router.get('/apis/article/search', controller.article.articles.search)             // 查询文章
   router.post('/apis/addArticles', controller.article.articles.addArticles)           // 发布文章
   router.post('/apis/article/likeArticle', controller.article.articles.likeArticle)   // 文章点赞
 

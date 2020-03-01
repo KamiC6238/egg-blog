@@ -150,6 +150,15 @@ class ReplysService extends Service {
       }
     }
   }
+  
+  async updateAvatar(uid, filename) {
+    const { ctx } = this
+    await ctx.model.models.replys.update({
+      avatar: await ctx.service.formatAvatar.index(filename)
+    }, {
+      where: { uid }
+    })
+  }
 }
 
 module.exports = ReplysService

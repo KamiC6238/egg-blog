@@ -114,6 +114,15 @@ class ReplysChildService extends Service {
       message: '回复文章成功',
     }
   }
+
+  async updateAvatar(uid, filename) {
+    const { ctx } = this
+    await ctx.model.models.replys_children.update({
+      avatar: await ctx.service.formatAvatar.index(filename)
+    }, {
+      where: { uid }
+    })
+  }
 }
 
 

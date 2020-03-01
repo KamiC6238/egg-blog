@@ -41,14 +41,14 @@ class FocusService extends Service {
       ? await ctx.model.models.focus_tags.destroy({    // 如果已经关注过了, 就取消关注
           where: {
             uid: body.uid,
-            tag_name: body.tag_name
+            tag_name: body.tag_name,
           }
        })
       : await ctx.model.models.focus_tags.create(body)  // 如果没关注过，就新增标签关注
       return {
         status: true,
         code: 0,
-        message: '关注标签成功'
+        message: isFocused ? '取消标签关注' : '关注标签成功'
       }
     } catch (err) {
       throw err

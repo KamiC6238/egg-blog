@@ -34,23 +34,56 @@ class ArticleService extends Service {
   async addArticles(article_id) {
     const { ctx } = this
     let body = ctx.request.body
-    await ctx.model.Articles.create({
-      uid: body.uid,
-      article_id,
-      article_title: body.article_title,
-      username: body.username,
-      avatar: body.avatar,
-      md_content: body.md_content,
-      html_content: body.html_content,
-      tags: body.tags,
-      create_time: body.create_time
-    })
-    await ctx.service.articles.isByFocused(article_id, body.article_title)    // 该用户是否被别的用户关注了
-    return {
-      status: true,
-      code: 0,
-      message: '发布文章成功',
-      article_id,
+    try {
+      await ctx.model.Articles.create({
+        uid: body.uid,
+        article_id,
+        article_title: body.article_title,
+        username: body.username,
+        avatar: body.avatar,
+        md_content: body.md_content,
+        html_content: body.html_content,
+        tags: body.tags,
+        create_time: body.create_time
+      })
+      await ctx.service.articles.isByFocused(article_id, body.article_title)    // 该用户是否被别的用户关注了
+      await ctx.service.articles.isTagByFocused(article_id)        // 是否有用户关注了该文章的标签
+      return {
+        status: true,
+        code: 0,
+        message: '发布文章成功',
+        article_id,
+      }
+    } catch (err) {
+      throw err
+    }
+  }
+
+  // 如果用户关注了某个标签, 那么该标签下有新的文章发布时, 在通知表插入数据
+  async isTagByFocused(article_id) {
+    const { ctx } = this
+    let body = ctx.request.body
+    try {
+      let tags = await ctx.model.models.focus_tags.findAll({ raw: true })   // 找到用户关注的标签表
+      let article_tags = body.tags.split(',')
+      for(let i = 0; i < tags.length; i++) {
+        if(article_tags.indexOf(tags[i].tag_name) > -1) {
+          // 发文章的人和关注该文章标签的人不是同一个人的时候才需要通知
+          if(body.uid !== tags[i].uid) {
+            await ctx.model.models.notifications.create({
+              uid: tags[i].uid,
+              article_id,
+              article_title: body.article_title,
+              tags: tags[i].image_name,
+              is_read: false,
+              is_tags: true,
+              create_time: body.create_time
+            })
+          }
+        }
+      }
+    } catch (err) {
+      throw err
     }
   }
 
@@ -195,15 +228,40 @@ class ArticleService extends Service {
     }
   }
 
+  async search() {
+    const { ctx } = this
+    let searchArticles = []
+    let { value } = ctx.request.query
+    try {
+      let articles = await ctx.model.models.articles.findAll({
+        raw: true,
+        order: [
+          ['create_time', 'DESC']
+        ]
+      })
+      articles.forEach(article => {
+        if(article.article_title.indexOf(value) > -1) {
+          searchArticles.push(article)
+        }
+      })
+      return {
+        status: true,
+        code: 0,
+        articles: searchArticles,
+        message: '搜索文章列表成功'
+      }
+    } catch (err) {
+      throw err
+    }
+  }
+
   async updateAvatar(uid, filename) {
     const { ctx, config } = this
     try {
       await ctx.model.Articles.update({
         avatar: config.processEnv + '/public/img/' + filename
       }, {
-        where: {
-          uid
-        }
+        where: { uid }
       })
     } catch (err) {
       console.log('articles updateAvatar', err)
